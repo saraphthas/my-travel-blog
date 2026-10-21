@@ -1,8 +1,8 @@
 ---
-title: "A Weekend in Lisbon"
-description: "Tiles, trams, and pastel de nata."
+title: "Sri Lanka"
+description: "A home I finally got to know."
 pubDate: 2026-10-19
-heroImage: "../../assets/lisbon.jpg"
+heroImage: "../../assets/srilanka.webp"
 ---
 
 Write your story here in plain text.
