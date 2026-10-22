@@ -10,7 +10,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const latest = posts.slice(0, 6);
+const latest = posts.slice(0, 7);
 ---
 
 
@@ -502,7 +502,7 @@ const latest = posts.slice(0, 6);
 		}
 
 		.gallery-details {
-		padding-top: 1rem;
+		padding-top: 0.5rem;
 		}
 
 		.gallery-details h3 {
@@ -548,6 +548,19 @@ const latest = posts.slice(0, 6);
 		}
 	}
 
+		.editorial-date {
+		margin-bottom: 0.5rem;
+		}
+
+		.gallery-details h3 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		}
+
+		.editorial-description {
+		margin-top: 0;
+		}
+
 
 		/* Remove link underlines from story cards */
 		.featured-story,
@@ -579,7 +592,7 @@ const latest = posts.slice(0, 6);
     <Header />
 
     <section class="hero">
-      <p class="eyebrow">Travel slowly · Wander often</p>
+      <p class="eyebrow">Slow Down · Begin to Wander </p>
 
       <h1>{SITE_TITLE}</h1>
 
