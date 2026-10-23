@@ -343,3 +343,5 @@ Especially then, maybe.
 Because if there's one thing Barcelona taught me, it's that life doesn't always need to go according to plan to turn into something beautiful.
 
 And sometimes, all you really need to do is book the flight.
+
+**Hasta luego, Barcelona. ❤️**
