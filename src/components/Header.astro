@@ -3,7 +3,7 @@
 import { SITE_TITLE } from '../consts';
 ---
 
-<header class="site-header">
+<header class="site-header" data-page={Astro.url.pathname === '/' ? 'home' : 'other'}>
   <a class="logo" href="/" aria-label={`${SITE_TITLE} home`}>
   </a>
 
@@ -124,10 +124,18 @@ import { SITE_TITLE } from '../consts';
       border-bottom: none;
   }
 
-  .site-header .logo,
-  .site-header .nav-link,
-  .site-header .drop-btn {
-  color: #fffdf8;
+  /* Default: black navigation on other pages */
+  .site-header[data-page='other'] .logo,
+  .site-header[data-page='other'] .nav-link,
+  .site-header[data-page='other'] .drop-btn {
+    color: #000;
+  }
+
+  /* Homepage: white navigation over the hero image */
+  .site-header[data-page='home'] .logo,
+  .site-header[data-page='home'] .nav-link,
+  .site-header[data-page='home'] .drop-btn {
+    color: #fffdf8;
   }
 
   .site-header .logo-mark {

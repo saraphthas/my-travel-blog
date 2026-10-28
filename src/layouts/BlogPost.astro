@@ -6,6 +6,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import PhotoScroll from '../components/PhotoScroll.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -22,6 +23,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 		<main>
 			<article>
+			
 				<!-- Article heading -->
 				<header class="article-header">
 					<p class="article-label">NOTES FROM THE ROAD</p>
@@ -60,9 +62,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				<div class="prose">
 					<slot />
 				</div>
+			
+			<PhotoScroll />
 			</article>
+			
 		</main>
-
+		
 		<Footer />
 	</body>
 </html>
@@ -160,6 +165,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 	/* Article body */
 	.prose {
+		position: relative;
+		z-index: 1;
 		width: 100%;
 		max-width: 720px;
 		margin: 0 auto;
