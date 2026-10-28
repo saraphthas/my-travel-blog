@@ -49,36 +49,47 @@ const latest = posts.slice(0, 7);
 
       .hero {
         position: relative;
-        isolation: isolate;
-        min-height: 85svh;
+        min-height: 100vh;
+        min-height: 100svh;
         box-sizing: border-box;
+
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
-        padding: 7rem 1.5rem;
-        text-align: center;
 
-        background:
+        padding: 8rem 1.5rem 4rem;
+
+        background-image:
           linear-gradient(
-            180deg,
-            rgba(25, 32, 24, 0.25) 0%,
-            rgba(25, 32, 24, 0.4) 50%,
-            rgba(25, 32, 24, 0.65) 100%
+            rgba(25, 30, 24, 0.25),
+            rgba(25, 30, 24, 0.25)
           ),
-          url('/homepage2.jpg') center / cover no-repeat;
+          url('/homepage2.jpg');
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
-      .eyebrow {
+      
+      .hero .eyebrow {
+        display: block;
+        align-self: center;
+        width: max-content;
+        max-width: calc(100vw - 3rem);
+        box-sizing: border-box;
         margin: 0 0 1.5rem;
         color: #e0e5d6;
-        font-size: 0.72rem;
+        font-size: 1rem;
         font-weight: 600;
         letter-spacing: 0.2em;
         line-height: 1.6;
         text-transform: uppercase;
+        text-align: center;
+        white-space: nowrap;
       }
+
 
       .hero h1 {
         max-width: 1000px;
@@ -592,7 +603,7 @@ const latest = posts.slice(0, 7);
     <Header />
 
     <section class="hero">
-      <p class="eyebrow">Slow Down · Begin to Wander </p>
+      <p class="eyebrow"> Take a moment · See the beauty all around you </p>
 
       <h1>{SITE_TITLE}</h1>
 

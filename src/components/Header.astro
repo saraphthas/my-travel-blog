@@ -5,8 +5,6 @@ import { SITE_TITLE } from '../consts';
 
 <header class="site-header">
   <a class="logo" href="/" aria-label={`${SITE_TITLE} home`}>
-    <span class="logo-mark" aria-hidden="true">✳</span>
-    <span>{SITE_TITLE}</span>
   </a>
 
   <button
@@ -43,9 +41,7 @@ import { SITE_TITLE } from '../consts';
     <a class="nav-link" href="/blog">Journal</a>
     <a class="nav-link" href="/about">About</a>
 
-    <a class="nav-cta" href="/blog">
-      Explore stories <span aria-hidden="true">↗</span>
-    </a>
+   
   </nav>
 </header>
 
@@ -111,16 +107,45 @@ import { SITE_TITLE } from '../consts';
   }
 
   .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    padding: 1.1rem clamp(1.25rem, 5vw, 4.5rem);
-    background: var(--cream);
-    border-bottom: 1px solid rgba(52, 59, 49, 0.1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+      z-index: 100;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.1rem clamp(1.25rem, 5vw, 4.5rem);
+
+      background: transparent;
+      border-bottom: none;
+  }
+
+  .site-header .logo,
+  .site-header .nav-link,
+  .site-header .drop-btn {
+  color: #fffdf8;
+  }
+
+  .site-header .logo-mark {
+    color: #d5dfc7;
+  }
+
+  .site-header .nav-cta {
+    background: #fffdf8;
+    border-color: #fffdf8;
+    color: var(--forest);
+  }
+
+  .site-header .menu-toggle {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .site-header .menu-toggle span {
+    background: #fffdf8;
   }
 
   .logo {
@@ -148,21 +173,44 @@ import { SITE_TITLE } from '../consts';
     gap: clamp(1rem, 2.3vw, 2rem);
   }
 
-  .nav-link,
-  .drop-btn {
-    padding: 0.5rem 0;
-    color: var(--forest);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
+  
+    .nav-link,
+    .drop-btn {
+      position: relative;
+      padding: 0.5rem 0;
+      color: var(--forest);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
 
-  .nav-link:hover,
-  .drop-btn:hover {
-    color: var(--sage);
-  }
+
+    .nav-link::after,
+    .drop-btn::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-link:hover,
+    .drop-btn:hover {
+      opacity: 0.8;
+      transform: translateY(-2px);
+    }
+
+    .nav-link:hover::after,
+    .drop-btn:hover::after {
+      transform: scaleX(1);
+    }
 
   .dropdown {
     position: relative;
