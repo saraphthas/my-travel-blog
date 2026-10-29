@@ -1,5 +1,5 @@
 ---
-title: "Bracelona, at 21"
+title: "Barcelona, at 21"
 description: "My first solo trip, 7 days of wandering and the people who made it unforgettable."
 pubDate: 2026-10-19
 heroImage: "../../assets/barcelonastreet.jpg"
